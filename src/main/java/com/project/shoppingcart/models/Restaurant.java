@@ -1,9 +1,12 @@
 package com.project.shoppingcart.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Restaurant {
@@ -14,7 +17,8 @@ public class Restaurant {
 	private String name;
 	private String email;
 	private String phoneNumber;
-	// private List<Product> products;
+	@OneToMany
+	private List<Product> products;
 	private String adress;
 	
 	public Restaurant() {
@@ -22,14 +26,17 @@ public class Restaurant {
 	}
 
 
-	public Restaurant(Long id, String name, String email, String phoneNumber, String adress) {
+	public Restaurant(Long id, String name, String email, String phoneNumber, List<Product> products, String adress) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
+		this.products = products;
 		this.adress = adress;
 	}
+
+
 
 
 	public Long getId() {
@@ -79,6 +86,16 @@ public class Restaurant {
 
 	public void setAdress(String adress) {
 		this.adress = adress;
+	}
+
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 

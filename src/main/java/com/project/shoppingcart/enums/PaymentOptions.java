@@ -1,4 +1,4 @@
-package com.project.shoppingcart;
+package com.project.shoppingcart.enums;
 
 public enum PaymentOptions {
 

@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.project.shoppingcart.PaymentOptions;
+import com.project.shoppingcart.enums.PaymentOptions;
 
 @Entity
 public class Cart {

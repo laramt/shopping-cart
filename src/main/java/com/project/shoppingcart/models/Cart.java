@@ -1,5 +1,6 @@
 package com.project.shoppingcart.models;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Cart {
 	private Client client;
 	@OneToMany
 	private List<Item> items;
-	private double totalValue;
+	private BigDecimal totalValue;
 	private PaymentOptions paymentOptions;
 	private boolean closed;
 	
@@ -31,7 +32,7 @@ public class Cart {
 		super();
 	}
 
-	public Cart(Long id, Client client, List<Item> items, double totalValue, PaymentOptions paymentOptions,
+	public Cart(Long id, Client client, List<Item> items, BigDecimal totalValue, PaymentOptions paymentOptions,
 			boolean closed) {
 		super();
 		this.id = id;
@@ -66,11 +67,11 @@ public class Cart {
 		this.items = items;
 	}
 
-	public double getTotalValue() {
+	public BigDecimal getTotalValue() {
 		return totalValue;
 	}
 
-	public void setTotalValue(double totalValue) {
+	public void setTotalValue(BigDecimal totalValue) {
 		this.totalValue = totalValue;
 	}
 

@@ -1,5 +1,7 @@
 package com.project.shoppingcart.models;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,7 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private double unitValue;
+	private BigDecimal unitValue;
 	private boolean available;
 	@ManyToOne
 	@JsonIgnore
@@ -27,7 +29,7 @@ public class Product {
 	}
 
 
-	public Product(Long id, String name, double unitValue, boolean available, Restaurant restaurant) {
+	public Product(Long id, String name, BigDecimal unitValue, boolean available, Restaurant restaurant) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -57,12 +59,12 @@ public class Product {
 	}
 
 
-	public double getUnitValue() {
+	public BigDecimal getUnitValue() {
 		return unitValue;
 	}
 
 
-	public void setUnitValue(double unitValue) {
+	public void setUnitValue(BigDecimal unitValue) {
 		this.unitValue = unitValue;
 	}
 

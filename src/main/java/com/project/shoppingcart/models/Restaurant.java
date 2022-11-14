@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Restaurant {
 	
@@ -18,6 +20,7 @@ public class Restaurant {
 	private String email;
 	private String phoneNumber;
 	@OneToMany
+	@JsonIgnore
 	private List<Product> products;
 	private String adress;
 	

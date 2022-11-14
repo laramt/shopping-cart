@@ -6,6 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Item {
 
@@ -15,20 +19,20 @@ public class Item {
 	@OneToOne
 	private Product product;
 	private int quantity;
-	/* @OneToOne
-	 * @JsonIgnore
-	private Cart cart; */
+	@OneToOne
+	@JsonIgnore
+	private Cart cart;
 	
 	public Item() {
 		super();
 	}
 
-	public Item(Long id, Product product, int quantity) {
+	public Item(Long id, Cart cart, Product product, int quantity) {
 		super();
 		this.id = id;
 		this.product = product;
 		this.quantity = quantity;
-		//this.cart = cart;
+		this.cart = cart;
 	}
 
 	public Long getId() {
@@ -55,14 +59,14 @@ public class Item {
 		this.quantity = quantity;
 	}
 
-	/* public Cart getCart() {
+	public Cart getCart() {
 		return cart;
 	}
 
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	*/
+	
 	
 	
 }
